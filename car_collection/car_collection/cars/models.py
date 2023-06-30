@@ -59,6 +59,7 @@ class Profile(models.Model):
         else:
             return ""
 
+
 class Car(models.Model):
     SPORTS_CAR = "Sports Car"
     PICKUP = "Pickup"
