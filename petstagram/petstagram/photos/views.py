@@ -16,7 +16,7 @@ def photo_details(request, pk):
         'likes': likes,
         'comments': comments
     }
-    return render(request, 'photos/photo-details-page.html', comments)
+    return render(request, 'photos/photo-details-page.html', context)
 
 
 def photo_edit(request):
