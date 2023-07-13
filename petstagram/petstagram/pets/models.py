@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+from petstagram.accounts.models import PetstagramUser
+
 
 # Create your models here.
 class Pet(models.Model):
@@ -8,6 +10,7 @@ class Pet(models.Model):
     personal_photo = models.URLField()
     date_of_birth = models.DateField(null=True, blank=True)
     slug = models.SlugField(unique=True, editable=False)
+    user = models.ForeignKey(to=PetstagramUser, on_delete=models.CASCADE)
 
     # Auto-create slug
     def save(self, *args, **kwargs):
